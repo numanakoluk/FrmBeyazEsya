@@ -60,7 +60,7 @@ namespace FrmBeyazEsya.DBManager
         {
 
             _conn.Open();
-            SqlCommand command = new SqlCommand("sp_FiyatAralik", _conn); 
+            SqlCommand command = new SqlCommand("sp_FiyatAralik", _conn); //Fiyatı 500 ile 1000 arasında olan ürünlerden kaç adet satılmış?
 
             SqlDataReader dr = command.ExecuteReader();
             List<SatisDataModel> urunler = new List<SatisDataModel>();
@@ -70,9 +70,10 @@ namespace FrmBeyazEsya.DBManager
                 SatisDataModel urun = new SatisDataModel()
                 {
 
-                    //UrunID = Convert.ToInt32(dr["UrunID"]),
+                    
                     UrunAdi = dr["UrunAd"].ToString(),
                     Fiyat = Convert.ToDecimal(dr["Fiyat"]),
+                    Adet = Convert.ToInt32(dr["Adet"]),
 
                 };
                 urunler.Add(urun);

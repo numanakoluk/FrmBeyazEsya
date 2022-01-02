@@ -49,11 +49,11 @@
     <Compile Include="DBManager\MusteriDB.cs" />
     <Compile Include="DBManager\SatisDB.cs" />
     <Compile Include="DBManager\UrunDB.cs" />
-    <Compile Include="FiyataGoreSatis.cs">
+    <Compile Include="FrmFiyataGoreSatis.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FiyataGoreSatis.Designer.cs">
-      <DependentUpon>FiyataGoreSatis.cs</DependentUpon>
+    <Compile Include="FrmFiyataGoreSatis.Designer.cs">
+      <DependentUpon>FrmFiyataGoreSatis.cs</DependentUpon>
     </Compile>
     <Compile Include="FrmBeyazEsya.cs">
       <SubType>Form</SubType>
@@ -79,8 +79,8 @@
     <Compile Include="Model\Urun.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="FiyataGoreSatis.resx">
-      <DependentUpon>FiyataGoreSatis.cs</DependentUpon>
+    <EmbeddedResource Include="FrmFiyataGoreSatis.resx">
+      <DependentUpon>FrmFiyataGoreSatis.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FrmBeyazEsya.resx">
       <DependentUpon>FrmBeyazEsya.cs</DependentUpon>

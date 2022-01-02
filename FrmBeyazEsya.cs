@@ -199,7 +199,7 @@ namespace FrmBeyazEsya
 
         private void btnFiyataGoreSatis_Click(object sender, EventArgs e)
         {
-            FiyataGoreSatis frmFiyat = new FiyataGoreSatis();
+            FrmFiyataGoreSatis frmFiyat = new FrmFiyataGoreSatis();
             frmFiyat.Show();
 
         }
