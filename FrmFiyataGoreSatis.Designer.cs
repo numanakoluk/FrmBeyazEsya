@@ -37,6 +37,7 @@ namespace FrmBeyazEsya
             // dgwFiyataGoreSatis
             // 
             this.dgwFiyataGoreSatis.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dgwFiyataGoreSatis.BackgroundColor = System.Drawing.Color.PeachPuff;
             this.dgwFiyataGoreSatis.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgwFiyataGoreSatis.Location = new System.Drawing.Point(4, 285);
             this.dgwFiyataGoreSatis.Name = "dgwFiyataGoreSatis";
@@ -55,7 +56,7 @@ namespace FrmBeyazEsya
             this.lblFiyataGore.TabIndex = 3;
             this.lblFiyataGore.Text = "Fiyata Göre Satis";
             // 
-            // FiyataGoreSatis
+            // FrmFiyataGoreSatis
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -63,7 +64,7 @@ namespace FrmBeyazEsya
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.lblFiyataGore);
             this.Controls.Add(this.dgwFiyataGoreSatis);
-            this.Name = "FiyataGoreSatis";
+            this.Name = "FrmFiyataGoreSatis";
             this.Text = "FiyataGoreSatis";
             this.Load += new System.EventHandler(this.FiyataGoreSatis_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgwFiyataGoreSatis)).EndInit();

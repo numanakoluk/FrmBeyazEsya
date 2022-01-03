@@ -27,12 +27,15 @@ namespace FrmBeyazEsya
 
         private void btnMusteriEkle_Click(object sender, EventArgs e)
         {
+
             _musteriDB.MusteriEkle(new Model.Musteri
             {
+                
                 MusteriAd = txtMusteriAd.Text,
                 MusteriSoyad = txtMusteriSoyad.Text,
                 MusteriSehir = txtMusteriSehir.Text
             });
+            
             MessageBox.Show("Müsteri Eklendi");
             dgwMusteriGetir.DataSource = _musteriDB.MusteriGetir();
         }
@@ -163,14 +166,14 @@ namespace FrmBeyazEsya
             Musteri musteri = _musteriDB.SatisMusteriGetir(txtSatisMusteriAd.Text, txtSatisSoyad.Text, txtSatisSehir.Text);
             if (musteri.MusteriID == 0)//Kayıt bulamazsa id default 0 geliyor
             {
-                MessageBox.Show("Musteri bulunamadı");
+                MessageBox.Show("Musteri Bulunamadı");
                 return;
             }
 
             Urun urun = _urunDB.UrunSatisGetir(txtSatisUrunAdi.Text);
             if (urun.UrunID == 0)//Kayıt bulamazsa id default 0 geliyor
             {
-                MessageBox.Show("Urun bulunamadı");
+                MessageBox.Show("Ürün Bulunamadı");
                 return;
             }
 

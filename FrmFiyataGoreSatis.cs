@@ -27,6 +27,7 @@ namespace FrmBeyazEsya
 
         private void GereksizGizle()
         {
+            dgwFiyataGoreSatis.Columns["SatisTarihi"].Visible = false;
             dgwFiyataGoreSatis.Columns["SatisID"].Visible = false;
             dgwFiyataGoreSatis.Columns["UrunID"].Visible = false;
             dgwFiyataGoreSatis.Columns["MusteriID"].Visible = false;

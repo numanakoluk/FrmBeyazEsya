@@ -29,6 +29,7 @@ namespace FrmBeyazEsya
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmBeyazEsya));
             this.grbMusteri = new System.Windows.Forms.GroupBox();
             this.txtMusteriID = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
@@ -70,6 +71,7 @@ namespace FrmBeyazEsya
             this.lblUrunAd = new System.Windows.Forms.Label();
             this.dgwUrunGetir = new System.Windows.Forms.DataGridView();
             this.grbSatis = new System.Windows.Forms.GroupBox();
+            this.btnFiyataGoreSatis = new System.Windows.Forms.Button();
             this.maskedTextBox1 = new System.Windows.Forms.MaskedTextBox();
             this.txtSatisAdet = new System.Windows.Forms.TextBox();
             this.txstSatısFiyat = new System.Windows.Forms.TextBox();
@@ -86,16 +88,18 @@ namespace FrmBeyazEsya
             this.lblSatisMusteriSehir = new System.Windows.Forms.Label();
             this.lblSatisMusteriSoyad = new System.Windows.Forms.Label();
             this.lblSatisMusteriAd = new System.Windows.Forms.Label();
-            this.btnFiyataGoreSatis = new System.Windows.Forms.Button();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.grbMusteri.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgwMusteriGetir)).BeginInit();
             this.grbUrun.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgwUrunGetir)).BeginInit();
             this.grbSatis.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // grbMusteri
             // 
+            this.grbMusteri.Controls.Add(this.pictureBox1);
             this.grbMusteri.Controls.Add(this.txtMusteriID);
             this.grbMusteri.Controls.Add(this.label1);
             this.grbMusteri.Controls.Add(this.btnMusteriAra);
@@ -333,6 +337,7 @@ namespace FrmBeyazEsya
             // dgwMusteriGetir
             // 
             this.dgwMusteriGetir.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dgwMusteriGetir.BackgroundColor = System.Drawing.Color.PeachPuff;
             this.dgwMusteriGetir.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgwMusteriGetir.Location = new System.Drawing.Point(12, 201);
             this.dgwMusteriGetir.Name = "dgwMusteriGetir";
@@ -485,6 +490,7 @@ namespace FrmBeyazEsya
             // dgwUrunGetir
             // 
             this.dgwUrunGetir.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dgwUrunGetir.BackgroundColor = System.Drawing.Color.PeachPuff;
             this.dgwUrunGetir.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgwUrunGetir.Location = new System.Drawing.Point(12, 466);
             this.dgwUrunGetir.Name = "dgwUrunGetir";
@@ -520,6 +526,17 @@ namespace FrmBeyazEsya
             this.grbSatis.TabIndex = 42;
             this.grbSatis.TabStop = false;
             this.grbSatis.Text = "Satış";
+            // 
+            // btnFiyataGoreSatis
+            // 
+            this.btnFiyataGoreSatis.Font = new System.Drawing.Font("Georgia", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.btnFiyataGoreSatis.Location = new System.Drawing.Point(87, 95);
+            this.btnFiyataGoreSatis.Name = "btnFiyataGoreSatis";
+            this.btnFiyataGoreSatis.Size = new System.Drawing.Size(171, 40);
+            this.btnFiyataGoreSatis.TabIndex = 59;
+            this.btnFiyataGoreSatis.Text = "Fiyata Gore Satış";
+            this.btnFiyataGoreSatis.UseVisualStyleBackColor = true;
+            this.btnFiyataGoreSatis.Click += new System.EventHandler(this.btnFiyataGoreSatis_Click);
             // 
             // maskedTextBox1
             // 
@@ -657,16 +674,15 @@ namespace FrmBeyazEsya
             this.lblSatisMusteriAd.TabIndex = 0;
             this.lblSatisMusteriAd.Text = "Müşteri Ad:";
             // 
-            // btnFiyataGoreSatis
+            // pictureBox1
             // 
-            this.btnFiyataGoreSatis.Font = new System.Drawing.Font("Georgia", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.btnFiyataGoreSatis.Location = new System.Drawing.Point(87, 95);
-            this.btnFiyataGoreSatis.Name = "btnFiyataGoreSatis";
-            this.btnFiyataGoreSatis.Size = new System.Drawing.Size(171, 40);
-            this.btnFiyataGoreSatis.TabIndex = 59;
-            this.btnFiyataGoreSatis.Text = "Fiyata Gore Satış";
-            this.btnFiyataGoreSatis.UseVisualStyleBackColor = true;
-            this.btnFiyataGoreSatis.Click += new System.EventHandler(this.btnFiyataGoreSatis_Click);
+            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
+            this.pictureBox1.Location = new System.Drawing.Point(6, 24);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(86, 79);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox1.TabIndex = 45;
+            this.pictureBox1.TabStop = false;
             // 
             // FrmBeyazEsya
             // 
@@ -692,6 +708,7 @@ namespace FrmBeyazEsya
             ((System.ComponentModel.ISupportInitialize)(this.dgwUrunGetir)).EndInit();
             this.grbSatis.ResumeLayout(false);
             this.grbSatis.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -756,6 +773,7 @@ namespace FrmBeyazEsya
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button btnMusteriAra;
         private System.Windows.Forms.Button btnFiyataGoreSatis;
+        private System.Windows.Forms.PictureBox pictureBox1;
     }
 }
 

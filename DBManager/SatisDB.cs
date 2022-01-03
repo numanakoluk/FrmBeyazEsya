@@ -3,22 +3,20 @@ using System;
 using System.Collections.Generic;
 using System.Data;
 using System.Data.SqlClient;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace FrmBeyazEsya.DBManager
 {
     public class SatisDB
     {
-        private SqlConnection _conn = new SqlConnection(@"Data Source=DESKTOP-DPB315I;Initial Catalog=DbNetworkProject;Integrated Security=True");
-        private MusteriDB musteriDB = new MusteriDB();
-        private UrunDB urunDB = new UrunDB();
+        private ConnectionString _conn = new ConnectionString();
+        //private MusteriDB musteriDB = new MusteriDB();
+        //private UrunDB urunDB = new UrunDB();
 
-        public List<SatisGridViewModel> SatisGetir()
+        public List<SatisGridViewModel> SatisGetir() //Satış Listelemek için Model kullanımı
         {
-            _conn.Open();
-            SqlCommand command = new SqlCommand("SELECT  SatisID, Musteri.MusteriAd, Musteri.MusteriSoyad, Musteri.MusteriSehir, Satis.Fiyat, Satis.Adet, Satis.SatisTarihi, Urun.UrunAd, Urun.Stok FROM Musteri INNER JOIN  Satis ON Musteri.MusteriID = Satis.MusteriID INNER JOIN Urun ON Satis.UrunID = Urun.UrunID", _conn);
+            _conn.BaglantiAc();
+            //Inner Join ile Sorgu çekme
+            SqlCommand command = new SqlCommand("SELECT  SatisID, Musteri.MusteriAd, Musteri.MusteriSoyad, Musteri.MusteriSehir, Satis.Fiyat, Satis.Adet, Satis.SatisTarihi, Urun.UrunAd, Urun.Stok FROM Musteri INNER JOIN  Satis ON Musteri.MusteriID = Satis.MusteriID INNER JOIN Urun ON Satis.UrunID = Urun.UrunID", _conn.Conn);
             SqlDataReader dr = command.ExecuteReader();
             List<SatisGridViewModel> vms = new List<SatisGridViewModel>();
             while (dr.Read())
@@ -37,16 +35,16 @@ namespace FrmBeyazEsya.DBManager
                 vms.Add(vm);
             }
 
-            _conn.Close();
+            _conn.BaglantiKapat();
             return vms;
         }
 
         public void SatisEkle(SatisDataModel view) //Satiş Eklemek İçin DataModel Kullaınımı.
         {
-            _conn.Open();
+            _conn.BaglantiAc();
 
             SqlCommand command = new SqlCommand("INSERT INTO Satis (UrunID,MusteriID,Fiyat,Adet,SatisTarihi) " +
-                "values(@UrunID,@MusteriID,@Fiyat,@Adet,@SatisTarihi) ", _conn);
+                "values(@UrunID,@MusteriID,@Fiyat,@Adet,@SatisTarihi) ", _conn.Conn);
 
             command.Parameters.AddWithValue("@UrunID", view.UrunID);
             command.Parameters.AddWithValue("@MusteriID", view.MusteriID);
@@ -54,13 +52,13 @@ namespace FrmBeyazEsya.DBManager
             command.Parameters.AddWithValue("@Adet", view.Adet);
             command.Parameters.AddWithValue("@SatisTarihi", view.SatisTarihi);
             command.ExecuteNonQuery();
-            _conn.Close();
+            _conn.BaglantiKapat();
         }
+
         public List<SatisDataModel> FiyatAralik()
         {
-
-            _conn.Open();
-            SqlCommand command = new SqlCommand("sp_FiyatAralik", _conn); //Fiyatı 500 ile 1000 arasında olan ürünlerden kaç adet satılmış?
+            _conn.BaglantiAc();
+            SqlCommand command = new SqlCommand("sp_FiyatAralik", _conn.Conn); //Fiyatı 500 ile 1000 arasında olan ürünlerden kaç adet satılmış?
 
             SqlDataReader dr = command.ExecuteReader();
             List<SatisDataModel> urunler = new List<SatisDataModel>();
@@ -69,17 +67,15 @@ namespace FrmBeyazEsya.DBManager
             {
                 SatisDataModel urun = new SatisDataModel()
                 {
-
-                    
                     UrunAdi = dr["UrunAd"].ToString(),
                     Fiyat = Convert.ToDecimal(dr["Fiyat"]),
                     Adet = Convert.ToInt32(dr["Adet"]),
-
+                    //SatisTarihi = Convert.ToDateTime(dr["SatisTarihi"]),
                 };
                 urunler.Add(urun);
             }
 
-            _conn.Close();
+            _conn.BaglantiKapat();
             return urunler;
         }
     }

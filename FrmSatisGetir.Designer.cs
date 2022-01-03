@@ -37,6 +37,7 @@ namespace FrmBeyazEsya
             // dgwSatisGetir
             // 
             this.dgwSatisGetir.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dgwSatisGetir.BackgroundColor = System.Drawing.Color.PeachPuff;
             this.dgwSatisGetir.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgwSatisGetir.Location = new System.Drawing.Point(1, 207);
             this.dgwSatisGetir.Name = "dgwSatisGetir";

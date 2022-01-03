@@ -7,12 +7,12 @@ namespace FrmBeyazEsya.DBManager
 {
     public class MusteriDB
     {
-        private SqlConnection _conn = new SqlConnection(@"Data Source=DESKTOP-DPB315I;Initial Catalog=DbNetworkProject;Integrated Security=True");
+        ConnectionString _conn = new ConnectionString();
 
         public List<Musteri> MusteriGetir()
         {
-            _conn.Open();
-            SqlCommand command = new SqlCommand("SELECT * FROM Musteri", _conn);
+            _conn.BaglantiAc();
+            SqlCommand command = new SqlCommand("SELECT * FROM Musteri", _conn.Conn);
             SqlDataReader dr = command.ExecuteReader();
             List<Musteri> musteriler = new List<Musteri>();
             while (dr.Read())
@@ -27,48 +27,48 @@ namespace FrmBeyazEsya.DBManager
                 musteriler.Add(musteri);
             }
 
-            _conn.Close();
+            _conn.BaglantiKapat();
             return musteriler;
         }
 
         public void MusteriEkle(Musteri musteri)
         {
-            _conn.Open();
-            SqlCommand command = new SqlCommand("INSERT INTO Musteri values(@MusteriAd,@MusteriSoyad,@MusteriSehir)", _conn); //parametreleri productstan aldı
+            _conn.BaglantiAc();
+            SqlCommand command = new SqlCommand("INSERT INTO Musteri values(@MusteriAd,@MusteriSoyad,@MusteriSehir)", _conn.Conn); //parametreleri productstan aldı
             command.Parameters.AddWithValue("@MusteriAd", musteri.MusteriAd);
             command.Parameters.AddWithValue("@MusteriSoyad", musteri.MusteriSoyad);
             command.Parameters.AddWithValue("@MusteriSehir", musteri.MusteriSehir);
             command.ExecuteNonQuery();
-            _conn.Close();
+            _conn.BaglantiKapat();
         }
 
         public void MusteriGuncelle(Musteri musteri)
         {
-            _conn.Open();
-            SqlCommand command = new SqlCommand("UPDATE Musteri SET MusteriAd=@MusteriAd, MusteriSoyad=@MusteriSoyad, MusteriSehir=@MusteriSehir WHERE MusteriID=@MusteriID", _conn);
+            _conn.BaglantiAc();
+            SqlCommand command = new SqlCommand("UPDATE Musteri SET MusteriAd=@MusteriAd, MusteriSoyad=@MusteriSoyad, MusteriSehir=@MusteriSehir WHERE MusteriID=@MusteriID", _conn.Conn);
             command.Parameters.AddWithValue("@MusteriAd", musteri.MusteriAd);
             command.Parameters.AddWithValue("@MusteriSoyad", musteri.MusteriSoyad);
             command.Parameters.AddWithValue("@MusteriSehir", musteri.MusteriSehir);
             command.Parameters.AddWithValue("@MusteriID", musteri.MusteriID);
             command.ExecuteNonQuery();
-            _conn.Close();
+            _conn.BaglantiKapat();
         }
 
         public void MusteriSil(Musteri musteri)
         {
-            _conn.Open();
-            SqlCommand command = new SqlCommand("Delete From Musteri WHERE MusteriID=@MusteriID", _conn);
+            _conn.BaglantiAc();
+            SqlCommand command = new SqlCommand("Delete From Musteri WHERE MusteriID=@MusteriID", _conn.Conn);
             command.Parameters.AddWithValue("@MusteriID", musteri.MusteriID);
             command.ExecuteNonQuery();
-            _conn.Close();
+            _conn.BaglantiKapat();
         }
 
         public Musteri MusteriAra(int musteriID)
         {
             Musteri musteri = new Musteri();
-
-            SqlCommand command = new SqlCommand("SELECT * FROM Musteri WHERE MusteriID=@musteriID ", _conn);
-            _conn.Open();
+            _conn.BaglantiAc();
+            SqlCommand command = new SqlCommand("SELECT * FROM Musteri WHERE MusteriID=@musteriID ", _conn.Conn);
+            
             command.Parameters.AddWithValue("@musteriID", musteriID);
 
             SqlDataReader dr = command.ExecuteReader();
@@ -83,15 +83,15 @@ namespace FrmBeyazEsya.DBManager
             else
                 musteri.MusteriID = -1;
 
-            _conn.Close();
+            _conn.BaglantiKapat();
             return musteri;
         }
 
         public Musteri SatisMusteriGetir(string musteriAd, string musteriSoyad, string musteriSehir)
         {
-            _conn.Open();
+            _conn.BaglantiAc();
             //Select MusteriID From dbo.Musteri where MusteriAd='Samed' and MusteriSoyad='Sargın' and MusteriSehir='Malatya'
-            SqlCommand command = new SqlCommand("Select * From Musteri WHERE MusteriAd=@musteriAd AND MusteriSoyad=@musteriSoyad AND MusteriSehir=@musteriSehir", _conn);
+            SqlCommand command = new SqlCommand("Select * From Musteri WHERE MusteriAd=@musteriAd AND MusteriSoyad=@musteriSoyad AND MusteriSehir=@musteriSehir", _conn.Conn);
             command.Parameters.AddWithValue("@musteriAd", musteriAd);
             command.Parameters.AddWithValue("@musteriSoyad", musteriSoyad);
             command.Parameters.AddWithValue("@musteriSehir", musteriSehir);
@@ -108,7 +108,7 @@ namespace FrmBeyazEsya.DBManager
                 musteri.MusteriSehir = dr["MusteriSehir"].ToString();
             }
 
-            _conn.Close();
+            _conn.BaglantiKapat();
             return musteri;
         }
     }

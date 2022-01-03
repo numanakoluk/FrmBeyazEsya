@@ -37,6 +37,7 @@ namespace FrmBeyazEsya
             // dgwStokBilgi
             // 
             this.dgwStokBilgi.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dgwStokBilgi.BackgroundColor = System.Drawing.Color.PeachPuff;
             this.dgwStokBilgi.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgwStokBilgi.Location = new System.Drawing.Point(3, 205);
             this.dgwStokBilgi.Name = "dgwStokBilgi";
