@@ -83,6 +83,29 @@ namespace FrmBeyazEsya.DBManager
 
 
         }
+        public Urun UrunAra(string urunAd)
+        {
+            Urun urun = new Urun();
+            _conn.BaglantiAc();
+            SqlCommand command = new SqlCommand("SELECT * FROM Urun WHERE UrunAd=@urunAd ", _conn.Conn);
+
+            command.Parameters.AddWithValue("@urunAd", urunAd);
+
+            SqlDataReader dr = command.ExecuteReader();
+            dr.Read();
+            if (dr.HasRows)
+            {
+                urun.UrunID = dr.GetInt32(0);
+                urun.UrunAd = dr[1].ToString();
+                urun.Stok = Convert.ToInt32(dr[2]);
+                
+            }
+            else
+                urun.UrunID = -1;
+
+            _conn.BaglantiKapat();
+            return urun;
+        }
         public void UrunGuncelle(Urun urun)
         {
             _conn.BaglantiAc();

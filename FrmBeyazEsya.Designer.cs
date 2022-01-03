@@ -31,6 +31,7 @@ namespace FrmBeyazEsya
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmBeyazEsya));
             this.grbMusteri = new System.Windows.Forms.GroupBox();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.txtMusteriID = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.btnMusteriAra = new System.Windows.Forms.Button();
@@ -56,6 +57,8 @@ namespace FrmBeyazEsya
             this.lblMusteriAd = new System.Windows.Forms.Label();
             this.dgwMusteriGetir = new System.Windows.Forms.DataGridView();
             this.grbUrun = new System.Windows.Forms.GroupBox();
+            this.txtUrunAdiAra = new System.Windows.Forms.TextBox();
+            this.lblUrunAdi = new System.Windows.Forms.Label();
             this.btnStokUyarı = new System.Windows.Forms.Button();
             this.txtGuncelleStok = new System.Windows.Forms.TextBox();
             this.lblVıewUrunStok = new System.Windows.Forms.Label();
@@ -88,13 +91,13 @@ namespace FrmBeyazEsya
             this.lblSatisMusteriSehir = new System.Windows.Forms.Label();
             this.lblSatisMusteriSoyad = new System.Windows.Forms.Label();
             this.lblSatisMusteriAd = new System.Windows.Forms.Label();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.btnUrunAra = new System.Windows.Forms.Button();
             this.grbMusteri.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgwMusteriGetir)).BeginInit();
             this.grbUrun.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgwUrunGetir)).BeginInit();
             this.grbSatis.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // grbMusteri
@@ -131,6 +134,16 @@ namespace FrmBeyazEsya
             this.grbMusteri.TabStop = false;
             this.grbMusteri.Text = "Müşteri";
             // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
+            this.pictureBox1.Location = new System.Drawing.Point(6, 24);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(86, 79);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox1.TabIndex = 45;
+            this.pictureBox1.TabStop = false;
+            // 
             // txtMusteriID
             // 
             this.txtMusteriID.Location = new System.Drawing.Point(928, 45);
@@ -141,11 +154,11 @@ namespace FrmBeyazEsya
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(955, 18);
+            this.label1.Location = new System.Drawing.Point(946, 20);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(91, 18);
+            this.label1.Size = new System.Drawing.Size(112, 18);
             this.label1.TabIndex = 43;
-            this.label1.Text = "Müşteri ID";
+            this.label1.Text = "Müşteri Sehir";
             // 
             // btnMusteriAra
             // 
@@ -349,6 +362,9 @@ namespace FrmBeyazEsya
             // 
             // grbUrun
             // 
+            this.grbUrun.Controls.Add(this.btnUrunAra);
+            this.grbUrun.Controls.Add(this.txtUrunAdiAra);
+            this.grbUrun.Controls.Add(this.lblUrunAdi);
             this.grbUrun.Controls.Add(this.btnStokUyarı);
             this.grbUrun.Controls.Add(this.txtGuncelleStok);
             this.grbUrun.Controls.Add(this.lblVıewUrunStok);
@@ -370,11 +386,27 @@ namespace FrmBeyazEsya
             this.grbUrun.TabStop = false;
             this.grbUrun.Text = "Ürün";
             // 
+            // txtUrunAdiAra
+            // 
+            this.txtUrunAdiAra.Location = new System.Drawing.Point(932, 40);
+            this.txtUrunAdiAra.Name = "txtUrunAdiAra";
+            this.txtUrunAdiAra.Size = new System.Drawing.Size(154, 27);
+            this.txtUrunAdiAra.TabIndex = 47;
+            // 
+            // lblUrunAdi
+            // 
+            this.lblUrunAdi.AutoSize = true;
+            this.lblUrunAdi.Location = new System.Drawing.Point(965, 17);
+            this.lblUrunAdi.Name = "lblUrunAdi";
+            this.lblUrunAdi.Size = new System.Drawing.Size(93, 20);
+            this.lblUrunAdi.TabIndex = 46;
+            this.lblUrunAdi.Text = "Ürün Adı";
+            // 
             // btnStokUyarı
             // 
-            this.btnStokUyarı.Location = new System.Drawing.Point(801, 89);
+            this.btnStokUyarı.Location = new System.Drawing.Point(704, 89);
             this.btnStokUyarı.Name = "btnStokUyarı";
-            this.btnStokUyarı.Size = new System.Drawing.Size(178, 33);
+            this.btnStokUyarı.Size = new System.Drawing.Size(175, 33);
             this.btnStokUyarı.TabIndex = 25;
             this.btnStokUyarı.Text = "Urun Stok Uyarı";
             this.btnStokUyarı.UseVisualStyleBackColor = true;
@@ -416,7 +448,7 @@ namespace FrmBeyazEsya
             // 
             // btnUrunGetir
             // 
-            this.btnUrunGetir.Location = new System.Drawing.Point(127, 89);
+            this.btnUrunGetir.Location = new System.Drawing.Point(30, 89);
             this.btnUrunGetir.Name = "btnUrunGetir";
             this.btnUrunGetir.Size = new System.Drawing.Size(148, 33);
             this.btnUrunGetir.TabIndex = 17;
@@ -426,7 +458,7 @@ namespace FrmBeyazEsya
             // 
             // btnUrunEkle
             // 
-            this.btnUrunEkle.Location = new System.Drawing.Point(282, 89);
+            this.btnUrunEkle.Location = new System.Drawing.Point(185, 89);
             this.btnUrunEkle.Name = "btnUrunEkle";
             this.btnUrunEkle.Size = new System.Drawing.Size(172, 33);
             this.btnUrunEkle.TabIndex = 18;
@@ -444,7 +476,7 @@ namespace FrmBeyazEsya
             // 
             // btnUrunSil
             // 
-            this.btnUrunSil.Location = new System.Drawing.Point(636, 89);
+            this.btnUrunSil.Location = new System.Drawing.Point(539, 89);
             this.btnUrunSil.Name = "btnUrunSil";
             this.btnUrunSil.Size = new System.Drawing.Size(153, 33);
             this.btnUrunSil.TabIndex = 20;
@@ -454,7 +486,7 @@ namespace FrmBeyazEsya
             // 
             // btnUrunGuncelle
             // 
-            this.btnUrunGuncelle.Location = new System.Drawing.Point(461, 89);
+            this.btnUrunGuncelle.Location = new System.Drawing.Point(364, 89);
             this.btnUrunGuncelle.Name = "btnUrunGuncelle";
             this.btnUrunGuncelle.Size = new System.Drawing.Size(169, 33);
             this.btnUrunGuncelle.TabIndex = 21;
@@ -674,15 +706,16 @@ namespace FrmBeyazEsya
             this.lblSatisMusteriAd.TabIndex = 0;
             this.lblSatisMusteriAd.Text = "Müşteri Ad:";
             // 
-            // pictureBox1
+            // btnUrunAra
             // 
-            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(6, 24);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(86, 79);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox1.TabIndex = 45;
-            this.pictureBox1.TabStop = false;
+            this.btnUrunAra.Font = new System.Drawing.Font("Georgia", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.btnUrunAra.Location = new System.Drawing.Point(949, 73);
+            this.btnUrunAra.Name = "btnUrunAra";
+            this.btnUrunAra.Size = new System.Drawing.Size(122, 41);
+            this.btnUrunAra.TabIndex = 46;
+            this.btnUrunAra.Text = "Ürün Ara";
+            this.btnUrunAra.UseVisualStyleBackColor = true;
+            this.btnUrunAra.Click += new System.EventHandler(this.btnUrunAra_Click);
             // 
             // FrmBeyazEsya
             // 
@@ -702,13 +735,13 @@ namespace FrmBeyazEsya
             this.Load += new System.EventHandler(this.FrmBeyazEsya_Load);
             this.grbMusteri.ResumeLayout(false);
             this.grbMusteri.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgwMusteriGetir)).EndInit();
             this.grbUrun.ResumeLayout(false);
             this.grbUrun.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgwUrunGetir)).EndInit();
             this.grbSatis.ResumeLayout(false);
             this.grbSatis.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -774,6 +807,9 @@ namespace FrmBeyazEsya
         private System.Windows.Forms.Button btnMusteriAra;
         private System.Windows.Forms.Button btnFiyataGoreSatis;
         private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.TextBox txtUrunAdiAra;
+        private System.Windows.Forms.Label lblUrunAdi;
+        private System.Windows.Forms.Button btnUrunAra;
     }
 }
 

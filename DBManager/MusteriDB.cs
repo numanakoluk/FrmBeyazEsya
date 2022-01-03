@@ -63,13 +63,13 @@ namespace FrmBeyazEsya.DBManager
             _conn.BaglantiKapat();
         }
 
-        public Musteri MusteriAra(int musteriID)
+        public Musteri MusteriAra(string musteriSehir)
         {
             Musteri musteri = new Musteri();
             _conn.BaglantiAc();
-            SqlCommand command = new SqlCommand("SELECT * FROM Musteri WHERE MusteriID=@musteriID ", _conn.Conn);
+            SqlCommand command = new SqlCommand("SELECT * FROM Musteri WHERE MusteriSehir=@musteriSehir ", _conn.Conn);
             
-            command.Parameters.AddWithValue("@musteriID", musteriID);
+            command.Parameters.AddWithValue("@musteriSehir", musteriSehir);
 
             SqlDataReader dr = command.ExecuteReader();
             dr.Read();

@@ -65,6 +65,7 @@ namespace FrmBeyazEsya
             this.Controls.Add(this.lblFiyataGore);
             this.Controls.Add(this.dgwFiyataGoreSatis);
             this.Name = "FrmFiyataGoreSatis";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FiyataGoreSatis";
             this.Load += new System.EventHandler(this.FiyataGoreSatis_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgwFiyataGoreSatis)).EndInit();

@@ -67,11 +67,12 @@ namespace FrmBeyazEsya
 
         private void btnMusteriAra_Click(object sender, EventArgs e)
         {
-            Musteri m = _musteriDB.MusteriAra(int.Parse(txtMusteriID.Text));
+            Musteri musteri = _musteriDB.MusteriAra(txtMusteriID.Text);
 
-            if (m.MusteriID != -1)
+            if (musteri.MusteriID != -1)
             {
-                MessageBox.Show("Müsteri ID:" + m.MusteriID + " " + "Musteri Bilgileri:" + m.MusteriAd + " " + m.MusteriSoyad + " " + m.MusteriSehir, "BİLGİ");
+                MessageBox.Show("Müsteri ID:" + musteri.MusteriID + " " + "Musteri Bilgileri:" + musteri.MusteriAd + " " + musteri.MusteriSoyad + " " + musteri.MusteriSehir, "BİLGİ");
+             
             }
             else
             {
@@ -137,8 +138,22 @@ namespace FrmBeyazEsya
             };
             _urunDB.UrunGuncelle(urun);
             dgwUrunGetir.DataSource = _urunDB.TumUrunleriGetir();
-            MessageBox.Show("Urun Güncellendi.");
+            MessageBox.Show("Ürün Güncellendi.");
         }
+        private void btnUrunAra_Click(object sender, EventArgs e)
+        {
+            Urun urun = _urunDB.UrunAra(txtUrunAdiAra.Text);
+
+            if (urun.UrunID != -1)
+            {
+                MessageBox.Show("Urun ID:" + urun.UrunID + " " + "Ürün Bilgileri:" + urun.UrunAd + " " + urun.Stok + "BİLGİ");
+            }
+            else
+            {
+                MessageBox.Show("Ürün Bulunamadı");
+            }
+        }
+
 
         private void btnStokUyarı_Click(object sender, EventArgs e)
         {
@@ -206,5 +221,7 @@ namespace FrmBeyazEsya
             frmFiyat.Show();
 
         }
+
+        
     }
 }
