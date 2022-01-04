@@ -16,13 +16,14 @@ namespace FrmBeyazEsya.DBManager
         {
             _conn.BaglantiAc();
             //Inner Join ile Sorgu çekme
-            SqlCommand command = new SqlCommand("SELECT  SatisID, Musteri.MusteriAd, Musteri.MusteriSoyad, Musteri.MusteriSehir, Satis.Fiyat, Satis.Adet, Satis.SatisTarihi, Urun.UrunAd, Urun.Stok FROM Musteri INNER JOIN  Satis ON Musteri.MusteriID = Satis.MusteriID INNER JOIN Urun ON Satis.UrunID = Urun.UrunID", _conn.Conn);
+            SqlCommand command = new SqlCommand("SELECT  SatisID, Musteri.MusteriTC, Musteri.MusteriAd, Musteri.MusteriSoyad, Musteri.MusteriSehir, Satis.Fiyat, Satis.Adet, Satis.SatisTarihi, Urun.UrunAd, Urun.Stok FROM Musteri INNER JOIN  Satis ON Musteri.MusteriID = Satis.MusteriID INNER JOIN Urun ON Satis.UrunID = Urun.UrunID", _conn.Conn);
             SqlDataReader dr = command.ExecuteReader();
             List<SatisGridViewModel> vms = new List<SatisGridViewModel>();
             while (dr.Read())
             {
                 SatisGridViewModel vm = new SatisGridViewModel()
                 {
+                    MusteriTC = dr["MusteriTC"].ToString(),
                     MusteriAd = dr["MusteriAd"].ToString(),
                     MusteriSoyad = dr["MusteriSoyad"].ToString(),
                     MusteriSehir = dr["MusteriSehir"].ToString(),

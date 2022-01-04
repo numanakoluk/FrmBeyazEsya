@@ -70,8 +70,7 @@ namespace FrmBeyazEsya.DBManager
             command.Parameters.AddWithValue("@UrunAd", urun.UrunAd);
             command.Parameters.AddWithValue("@Stok", urun.Stok);
             command.ExecuteNonQuery();
-            _conn.BaglantiKapat();
-
+            
         }
         public void UrunSil(Urun urun)
         {

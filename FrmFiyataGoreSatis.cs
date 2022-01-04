@@ -34,6 +34,7 @@ namespace FrmBeyazEsya
             dgwFiyataGoreSatis.Columns["MusteriAd"].Visible = false;
             dgwFiyataGoreSatis.Columns["MusteriSoyad"].Visible = false;
             dgwFiyataGoreSatis.Columns["MusteriSehir"].Visible = false;
+            dgwFiyataGoreSatis.Columns["MusteriTC"].Visible = false;
            
         }
     }

@@ -31,9 +31,11 @@ namespace FrmBeyazEsya
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmBeyazEsya));
             this.grbMusteri = new System.Windows.Forms.GroupBox();
+            this.mskMusteriTCGuncelle = new System.Windows.Forms.MaskedTextBox();
+            this.mskListeleMusteriTC = new System.Windows.Forms.MaskedTextBox();
+            this.mskAraMusteriTC = new System.Windows.Forms.MaskedTextBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.txtMusteriID = new System.Windows.Forms.TextBox();
-            this.label1 = new System.Windows.Forms.Label();
+            this.lblAraMusteriTC = new System.Windows.Forms.Label();
             this.btnMusteriAra = new System.Windows.Forms.Button();
             this.lblViewMusteriTC = new System.Windows.Forms.Label();
             this.lblViewMusteriSehir = new System.Windows.Forms.Label();
@@ -41,13 +43,11 @@ namespace FrmBeyazEsya
             this.lblViewMusteriAd = new System.Windows.Forms.Label();
             this.btnMusteriSil = new System.Windows.Forms.Button();
             this.btnMusteriGuncelle = new System.Windows.Forms.Button();
-            this.txtMusteriTCGuncelle = new System.Windows.Forms.TextBox();
             this.txtMusteriAdGuncelle = new System.Windows.Forms.TextBox();
             this.txtMusteriSoyadGuncelle = new System.Windows.Forms.TextBox();
             this.txtMusteriSehirGuncelle = new System.Windows.Forms.TextBox();
             this.btnMusteriEkle = new System.Windows.Forms.Button();
             this.btnMusteriGetir = new System.Windows.Forms.Button();
-            this.txtMusteriTC = new System.Windows.Forms.TextBox();
             this.txtMusteriSehir = new System.Windows.Forms.TextBox();
             this.txtMusteriSoyad = new System.Windows.Forms.TextBox();
             this.txtMusteriAd = new System.Windows.Forms.TextBox();
@@ -57,6 +57,7 @@ namespace FrmBeyazEsya
             this.lblMusteriAd = new System.Windows.Forms.Label();
             this.dgwMusteriGetir = new System.Windows.Forms.DataGridView();
             this.grbUrun = new System.Windows.Forms.GroupBox();
+            this.btnUrunAra = new System.Windows.Forms.Button();
             this.txtUrunAdiAra = new System.Windows.Forms.TextBox();
             this.lblUrunAdi = new System.Windows.Forms.Label();
             this.btnStokUyarı = new System.Windows.Forms.Button();
@@ -74,6 +75,8 @@ namespace FrmBeyazEsya
             this.lblUrunAd = new System.Windows.Forms.Label();
             this.dgwUrunGetir = new System.Windows.Forms.DataGridView();
             this.grbSatis = new System.Windows.Forms.GroupBox();
+            this.mskSatisMusteriTC = new System.Windows.Forms.MaskedTextBox();
+            this.lblSatiMusteriTC = new System.Windows.Forms.Label();
             this.btnFiyataGoreSatis = new System.Windows.Forms.Button();
             this.maskedTextBox1 = new System.Windows.Forms.MaskedTextBox();
             this.txtSatisAdet = new System.Windows.Forms.TextBox();
@@ -91,7 +94,6 @@ namespace FrmBeyazEsya
             this.lblSatisMusteriSehir = new System.Windows.Forms.Label();
             this.lblSatisMusteriSoyad = new System.Windows.Forms.Label();
             this.lblSatisMusteriAd = new System.Windows.Forms.Label();
-            this.btnUrunAra = new System.Windows.Forms.Button();
             this.grbMusteri.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgwMusteriGetir)).BeginInit();
@@ -102,9 +104,11 @@ namespace FrmBeyazEsya
             // 
             // grbMusteri
             // 
+            this.grbMusteri.Controls.Add(this.mskMusteriTCGuncelle);
+            this.grbMusteri.Controls.Add(this.mskListeleMusteriTC);
+            this.grbMusteri.Controls.Add(this.mskAraMusteriTC);
             this.grbMusteri.Controls.Add(this.pictureBox1);
-            this.grbMusteri.Controls.Add(this.txtMusteriID);
-            this.grbMusteri.Controls.Add(this.label1);
+            this.grbMusteri.Controls.Add(this.lblAraMusteriTC);
             this.grbMusteri.Controls.Add(this.btnMusteriAra);
             this.grbMusteri.Controls.Add(this.lblViewMusteriTC);
             this.grbMusteri.Controls.Add(this.lblViewMusteriSehir);
@@ -112,13 +116,11 @@ namespace FrmBeyazEsya
             this.grbMusteri.Controls.Add(this.lblViewMusteriAd);
             this.grbMusteri.Controls.Add(this.btnMusteriSil);
             this.grbMusteri.Controls.Add(this.btnMusteriGuncelle);
-            this.grbMusteri.Controls.Add(this.txtMusteriTCGuncelle);
             this.grbMusteri.Controls.Add(this.txtMusteriAdGuncelle);
             this.grbMusteri.Controls.Add(this.txtMusteriSoyadGuncelle);
             this.grbMusteri.Controls.Add(this.txtMusteriSehirGuncelle);
             this.grbMusteri.Controls.Add(this.btnMusteriEkle);
             this.grbMusteri.Controls.Add(this.btnMusteriGetir);
-            this.grbMusteri.Controls.Add(this.txtMusteriTC);
             this.grbMusteri.Controls.Add(this.txtMusteriSehir);
             this.grbMusteri.Controls.Add(this.txtMusteriSoyad);
             this.grbMusteri.Controls.Add(this.txtMusteriAd);
@@ -134,6 +136,32 @@ namespace FrmBeyazEsya
             this.grbMusteri.TabStop = false;
             this.grbMusteri.Text = "Müşteri";
             // 
+            // mskMusteriTCGuncelle
+            // 
+            this.mskMusteriTCGuncelle.Location = new System.Drawing.Point(611, 108);
+            this.mskMusteriTCGuncelle.Mask = "00000000000";
+            this.mskMusteriTCGuncelle.Name = "mskMusteriTCGuncelle";
+            this.mskMusteriTCGuncelle.Size = new System.Drawing.Size(253, 25);
+            this.mskMusteriTCGuncelle.TabIndex = 48;
+            this.mskMusteriTCGuncelle.ValidatingType = typeof(int);
+            // 
+            // mskListeleMusteriTC
+            // 
+            this.mskListeleMusteriTC.Location = new System.Drawing.Point(374, 111);
+            this.mskListeleMusteriTC.Name = "mskListeleMusteriTC";
+            this.mskListeleMusteriTC.Size = new System.Drawing.Size(154, 25);
+            this.mskListeleMusteriTC.TabIndex = 4;
+            this.mskListeleMusteriTC.ValidatingType = typeof(int);
+            // 
+            // mskAraMusteriTC
+            // 
+            this.mskAraMusteriTC.Location = new System.Drawing.Point(938, 43);
+            this.mskAraMusteriTC.Mask = "00000000000";
+            this.mskAraMusteriTC.Name = "mskAraMusteriTC";
+            this.mskAraMusteriTC.Size = new System.Drawing.Size(133, 25);
+            this.mskAraMusteriTC.TabIndex = 46;
+            this.mskAraMusteriTC.ValidatingType = typeof(int);
+            // 
             // pictureBox1
             // 
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
@@ -144,21 +172,14 @@ namespace FrmBeyazEsya
             this.pictureBox1.TabIndex = 45;
             this.pictureBox1.TabStop = false;
             // 
-            // txtMusteriID
+            // lblAraMusteriTC
             // 
-            this.txtMusteriID.Location = new System.Drawing.Point(928, 45);
-            this.txtMusteriID.Name = "txtMusteriID";
-            this.txtMusteriID.Size = new System.Drawing.Size(154, 25);
-            this.txtMusteriID.TabIndex = 44;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(946, 20);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(112, 18);
-            this.label1.TabIndex = 43;
-            this.label1.Text = "Müşteri Sehir";
+            this.lblAraMusteriTC.AutoSize = true;
+            this.lblAraMusteriTC.Location = new System.Drawing.Point(965, 20);
+            this.lblAraMusteriTC.Name = "lblAraMusteriTC";
+            this.lblAraMusteriTC.Size = new System.Drawing.Size(93, 18);
+            this.lblAraMusteriTC.TabIndex = 43;
+            this.lblAraMusteriTC.Text = "Müşteri TC";
             // 
             // btnMusteriAra
             // 
@@ -233,13 +254,6 @@ namespace FrmBeyazEsya
             this.btnMusteriGuncelle.UseVisualStyleBackColor = true;
             this.btnMusteriGuncelle.Click += new System.EventHandler(this.btnMusteriGuncelle_Click);
             // 
-            // txtMusteriTCGuncelle
-            // 
-            this.txtMusteriTCGuncelle.Location = new System.Drawing.Point(611, 111);
-            this.txtMusteriTCGuncelle.Name = "txtMusteriTCGuncelle";
-            this.txtMusteriTCGuncelle.Size = new System.Drawing.Size(253, 25);
-            this.txtMusteriTCGuncelle.TabIndex = 16;
-            // 
             // txtMusteriAdGuncelle
             // 
             this.txtMusteriAdGuncelle.Location = new System.Drawing.Point(611, 20);
@@ -283,33 +297,26 @@ namespace FrmBeyazEsya
             this.btnMusteriGetir.UseVisualStyleBackColor = true;
             this.btnMusteriGetir.Click += new System.EventHandler(this.btnMusteriGetir_Click);
             // 
-            // txtMusteriTC
-            // 
-            this.txtMusteriTC.Location = new System.Drawing.Point(374, 111);
-            this.txtMusteriTC.Name = "txtMusteriTC";
-            this.txtMusteriTC.Size = new System.Drawing.Size(154, 25);
-            this.txtMusteriTC.TabIndex = 7;
-            // 
             // txtMusteriSehir
             // 
             this.txtMusteriSehir.Location = new System.Drawing.Point(374, 81);
             this.txtMusteriSehir.Name = "txtMusteriSehir";
             this.txtMusteriSehir.Size = new System.Drawing.Size(154, 25);
-            this.txtMusteriSehir.TabIndex = 6;
+            this.txtMusteriSehir.TabIndex = 3;
             // 
             // txtMusteriSoyad
             // 
             this.txtMusteriSoyad.Location = new System.Drawing.Point(374, 50);
             this.txtMusteriSoyad.Name = "txtMusteriSoyad";
             this.txtMusteriSoyad.Size = new System.Drawing.Size(154, 25);
-            this.txtMusteriSoyad.TabIndex = 5;
+            this.txtMusteriSoyad.TabIndex = 2;
             // 
             // txtMusteriAd
             // 
             this.txtMusteriAd.Location = new System.Drawing.Point(374, 20);
             this.txtMusteriAd.Name = "txtMusteriAd";
             this.txtMusteriAd.Size = new System.Drawing.Size(154, 25);
-            this.txtMusteriAd.TabIndex = 4;
+            this.txtMusteriAd.TabIndex = 1;
             // 
             // lblMusteriTC
             // 
@@ -386,6 +393,17 @@ namespace FrmBeyazEsya
             this.grbUrun.TabStop = false;
             this.grbUrun.Text = "Ürün";
             // 
+            // btnUrunAra
+            // 
+            this.btnUrunAra.Font = new System.Drawing.Font("Georgia", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.btnUrunAra.Location = new System.Drawing.Point(949, 73);
+            this.btnUrunAra.Name = "btnUrunAra";
+            this.btnUrunAra.Size = new System.Drawing.Size(122, 41);
+            this.btnUrunAra.TabIndex = 46;
+            this.btnUrunAra.Text = "Ürün Ara";
+            this.btnUrunAra.UseVisualStyleBackColor = true;
+            this.btnUrunAra.Click += new System.EventHandler(this.btnUrunAra_Click);
+            // 
             // txtUrunAdiAra
             // 
             this.txtUrunAdiAra.Location = new System.Drawing.Point(932, 40);
@@ -444,7 +462,7 @@ namespace FrmBeyazEsya
             this.txtUrunStok.Location = new System.Drawing.Point(349, 50);
             this.txtUrunStok.Name = "txtUrunStok";
             this.txtUrunStok.Size = new System.Drawing.Size(154, 27);
-            this.txtUrunStok.TabIndex = 23;
+            this.txtUrunStok.TabIndex = 6;
             // 
             // btnUrunGetir
             // 
@@ -472,7 +490,7 @@ namespace FrmBeyazEsya
             this.txtUrunAd.Location = new System.Drawing.Point(349, 17);
             this.txtUrunAd.Name = "txtUrunAd";
             this.txtUrunAd.Size = new System.Drawing.Size(154, 27);
-            this.txtUrunAd.TabIndex = 19;
+            this.txtUrunAd.TabIndex = 5;
             // 
             // btnUrunSil
             // 
@@ -534,6 +552,8 @@ namespace FrmBeyazEsya
             // 
             // grbSatis
             // 
+            this.grbSatis.Controls.Add(this.mskSatisMusteriTC);
+            this.grbSatis.Controls.Add(this.lblSatiMusteriTC);
             this.grbSatis.Controls.Add(this.btnFiyataGoreSatis);
             this.grbSatis.Controls.Add(this.maskedTextBox1);
             this.grbSatis.Controls.Add(this.txtSatisAdet);
@@ -559,6 +579,24 @@ namespace FrmBeyazEsya
             this.grbSatis.TabStop = false;
             this.grbSatis.Text = "Satış";
             // 
+            // mskSatisMusteriTC
+            // 
+            this.mskSatisMusteriTC.Location = new System.Drawing.Point(108, 10);
+            this.mskSatisMusteriTC.Mask = "00000000000";
+            this.mskSatisMusteriTC.Name = "mskSatisMusteriTC";
+            this.mskSatisMusteriTC.Size = new System.Drawing.Size(133, 25);
+            this.mskSatisMusteriTC.TabIndex = 47;
+            this.mskSatisMusteriTC.ValidatingType = typeof(int);
+            // 
+            // lblSatiMusteriTC
+            // 
+            this.lblSatiMusteriTC.AutoSize = true;
+            this.lblSatiMusteriTC.Location = new System.Drawing.Point(3, 16);
+            this.lblSatiMusteriTC.Name = "lblSatiMusteriTC";
+            this.lblSatiMusteriTC.Size = new System.Drawing.Size(99, 18);
+            this.lblSatiMusteriTC.TabIndex = 60;
+            this.lblSatiMusteriTC.Text = "Müşteri TC:";
+            // 
             // btnFiyataGoreSatis
             // 
             this.btnFiyataGoreSatis.Font = new System.Drawing.Font("Georgia", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
@@ -581,21 +619,21 @@ namespace FrmBeyazEsya
             // 
             // txtSatisAdet
             // 
-            this.txtSatisAdet.Location = new System.Drawing.Point(652, 71);
+            this.txtSatisAdet.Location = new System.Drawing.Point(663, 74);
             this.txtSatisAdet.Name = "txtSatisAdet";
             this.txtSatisAdet.Size = new System.Drawing.Size(154, 25);
             this.txtSatisAdet.TabIndex = 57;
             // 
             // txstSatısFiyat
             // 
-            this.txstSatısFiyat.Location = new System.Drawing.Point(651, 40);
+            this.txstSatısFiyat.Location = new System.Drawing.Point(662, 43);
             this.txstSatısFiyat.Name = "txstSatısFiyat";
             this.txstSatısFiyat.Size = new System.Drawing.Size(155, 25);
             this.txstSatısFiyat.TabIndex = 56;
             // 
             // txtSatisUrunAdi
             // 
-            this.txtSatisUrunAdi.Location = new System.Drawing.Point(652, 10);
+            this.txtSatisUrunAdi.Location = new System.Drawing.Point(663, 13);
             this.txtSatisUrunAdi.Name = "txtSatisUrunAdi";
             this.txtSatisUrunAdi.Size = new System.Drawing.Size(154, 25);
             this.txtSatisUrunAdi.TabIndex = 55;
@@ -633,7 +671,7 @@ namespace FrmBeyazEsya
             // lblSatisAdet
             // 
             this.lblSatisAdet.AutoSize = true;
-            this.lblSatisAdet.Location = new System.Drawing.Point(592, 71);
+            this.lblSatisAdet.Location = new System.Drawing.Point(603, 74);
             this.lblSatisAdet.Name = "lblSatisAdet";
             this.lblSatisAdet.Size = new System.Drawing.Size(49, 18);
             this.lblSatisAdet.TabIndex = 48;
@@ -642,7 +680,7 @@ namespace FrmBeyazEsya
             // lblSatisFiyat
             // 
             this.lblSatisFiyat.AutoSize = true;
-            this.lblSatisFiyat.Location = new System.Drawing.Point(592, 43);
+            this.lblSatisFiyat.Location = new System.Drawing.Point(603, 46);
             this.lblSatisFiyat.Name = "lblSatisFiyat";
             this.lblSatisFiyat.Size = new System.Drawing.Size(53, 18);
             this.lblSatisFiyat.TabIndex = 46;
@@ -651,7 +689,7 @@ namespace FrmBeyazEsya
             // btnSatisEkle
             // 
             this.btnSatisEkle.Font = new System.Drawing.Font("Georgia", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.btnSatisEkle.Location = new System.Drawing.Point(595, 99);
+            this.btnSatisEkle.Location = new System.Drawing.Point(730, 102);
             this.btnSatisEkle.Name = "btnSatisEkle";
             this.btnSatisEkle.Size = new System.Drawing.Size(213, 40);
             this.btnSatisEkle.TabIndex = 9;
@@ -662,7 +700,7 @@ namespace FrmBeyazEsya
             // lblSatisUrunAd
             // 
             this.lblSatisUrunAd.AutoSize = true;
-            this.lblSatisUrunAd.Location = new System.Drawing.Point(566, 15);
+            this.lblSatisUrunAd.Location = new System.Drawing.Point(577, 18);
             this.lblSatisUrunAd.Name = "lblSatisUrunAd";
             this.lblSatisUrunAd.Size = new System.Drawing.Size(80, 18);
             this.lblSatisUrunAd.TabIndex = 44;
@@ -682,7 +720,7 @@ namespace FrmBeyazEsya
             // lblSatisMusteriSehir
             // 
             this.lblSatisMusteriSehir.AutoSize = true;
-            this.lblSatisMusteriSehir.Location = new System.Drawing.Point(238, 74);
+            this.lblSatisMusteriSehir.Location = new System.Drawing.Point(244, 74);
             this.lblSatisMusteriSehir.Name = "lblSatisMusteriSehir";
             this.lblSatisMusteriSehir.Size = new System.Drawing.Size(118, 18);
             this.lblSatisMusteriSehir.TabIndex = 2;
@@ -705,17 +743,6 @@ namespace FrmBeyazEsya
             this.lblSatisMusteriAd.Size = new System.Drawing.Size(98, 18);
             this.lblSatisMusteriAd.TabIndex = 0;
             this.lblSatisMusteriAd.Text = "Müşteri Ad:";
-            // 
-            // btnUrunAra
-            // 
-            this.btnUrunAra.Font = new System.Drawing.Font("Georgia", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.btnUrunAra.Location = new System.Drawing.Point(949, 73);
-            this.btnUrunAra.Name = "btnUrunAra";
-            this.btnUrunAra.Size = new System.Drawing.Size(122, 41);
-            this.btnUrunAra.TabIndex = 46;
-            this.btnUrunAra.Text = "Ürün Ara";
-            this.btnUrunAra.UseVisualStyleBackColor = true;
-            this.btnUrunAra.Click += new System.EventHandler(this.btnUrunAra_Click);
             // 
             // FrmBeyazEsya
             // 
@@ -755,13 +782,11 @@ namespace FrmBeyazEsya
         private System.Windows.Forms.Label lblViewMusteriAd;
         private System.Windows.Forms.Button btnMusteriSil;
         private System.Windows.Forms.Button btnMusteriGuncelle;
-        private System.Windows.Forms.TextBox txtMusteriTCGuncelle;
         private System.Windows.Forms.TextBox txtMusteriAdGuncelle;
         private System.Windows.Forms.TextBox txtMusteriSoyadGuncelle;
         private System.Windows.Forms.TextBox txtMusteriSehirGuncelle;
         private System.Windows.Forms.Button btnMusteriEkle;
         private System.Windows.Forms.Button btnMusteriGetir;
-        private System.Windows.Forms.TextBox txtMusteriTC;
         private System.Windows.Forms.TextBox txtMusteriSehir;
         private System.Windows.Forms.TextBox txtMusteriSoyad;
         private System.Windows.Forms.TextBox txtMusteriAd;
@@ -802,14 +827,18 @@ namespace FrmBeyazEsya
         private System.Windows.Forms.TextBox txtSatisSehir;
         private System.Windows.Forms.TextBox txtSatisSoyad;
         private System.Windows.Forms.TextBox txtSatisMusteriAd;
-        private System.Windows.Forms.TextBox txtMusteriID;
-        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label lblAraMusteriTC;
         private System.Windows.Forms.Button btnMusteriAra;
         private System.Windows.Forms.Button btnFiyataGoreSatis;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.TextBox txtUrunAdiAra;
         private System.Windows.Forms.Label lblUrunAdi;
         private System.Windows.Forms.Button btnUrunAra;
+        private System.Windows.Forms.MaskedTextBox mskAraMusteriTC;
+        private System.Windows.Forms.Label lblSatiMusteriTC;
+        private System.Windows.Forms.MaskedTextBox mskSatisMusteriTC;
+        private System.Windows.Forms.MaskedTextBox mskListeleMusteriTC;
+        private System.Windows.Forms.MaskedTextBox mskMusteriTCGuncelle;
     }
 }
 

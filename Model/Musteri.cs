@@ -12,5 +12,6 @@ namespace FrmBeyazEsya.Model
         public string MusteriAd { get; set; }
         public string MusteriSoyad { get; set; }
         public string MusteriSehir { get; set; }
+        public string MusteriTC { get; set; }
     }
 }

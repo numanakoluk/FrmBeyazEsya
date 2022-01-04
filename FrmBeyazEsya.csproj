@@ -51,6 +51,7 @@
     <Compile Include="DBManager\MusteriDB.cs" />
     <Compile Include="DBManager\SatisDB.cs" />
     <Compile Include="DBManager\UrunDB.cs" />
+    <Compile Include="Error.cs" />
     <Compile Include="FrmFiyataGoreSatis.cs">
       <SubType>Form</SubType>
     </Compile>
