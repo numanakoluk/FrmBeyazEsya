@@ -31,6 +31,7 @@ namespace FrmBeyazEsya
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmBeyazEsya));
             this.grbMusteri = new System.Windows.Forms.GroupBox();
+            this.cmbSehir = new System.Windows.Forms.ComboBox();
             this.mskMusteriTCGuncelle = new System.Windows.Forms.MaskedTextBox();
             this.mskListeleMusteriTC = new System.Windows.Forms.MaskedTextBox();
             this.mskAraMusteriTC = new System.Windows.Forms.MaskedTextBox();
@@ -78,7 +79,7 @@ namespace FrmBeyazEsya
             this.mskSatisMusteriTC = new System.Windows.Forms.MaskedTextBox();
             this.lblSatiMusteriTC = new System.Windows.Forms.Label();
             this.btnFiyataGoreSatis = new System.Windows.Forms.Button();
-            this.maskedTextBox1 = new System.Windows.Forms.MaskedTextBox();
+            this.mskSatisTarihi = new System.Windows.Forms.MaskedTextBox();
             this.txtSatisAdet = new System.Windows.Forms.TextBox();
             this.txstSatısFiyat = new System.Windows.Forms.TextBox();
             this.txtSatisUrunAdi = new System.Windows.Forms.TextBox();
@@ -104,6 +105,7 @@ namespace FrmBeyazEsya
             // 
             // grbMusteri
             // 
+            this.grbMusteri.Controls.Add(this.cmbSehir);
             this.grbMusteri.Controls.Add(this.mskMusteriTCGuncelle);
             this.grbMusteri.Controls.Add(this.mskListeleMusteriTC);
             this.grbMusteri.Controls.Add(this.mskAraMusteriTC);
@@ -135,6 +137,14 @@ namespace FrmBeyazEsya
             this.grbMusteri.TabIndex = 0;
             this.grbMusteri.TabStop = false;
             this.grbMusteri.Text = "Müşteri";
+            // 
+            // cmbSehir
+            // 
+            this.cmbSehir.FormattingEnabled = true;
+            this.cmbSehir.Location = new System.Drawing.Point(932, 133);
+            this.cmbSehir.Name = "cmbSehir";
+            this.cmbSehir.Size = new System.Drawing.Size(139, 26);
+            this.cmbSehir.TabIndex = 49;
             // 
             // mskMusteriTCGuncelle
             // 
@@ -555,7 +565,7 @@ namespace FrmBeyazEsya
             this.grbSatis.Controls.Add(this.mskSatisMusteriTC);
             this.grbSatis.Controls.Add(this.lblSatiMusteriTC);
             this.grbSatis.Controls.Add(this.btnFiyataGoreSatis);
-            this.grbSatis.Controls.Add(this.maskedTextBox1);
+            this.grbSatis.Controls.Add(this.mskSatisTarihi);
             this.grbSatis.Controls.Add(this.txtSatisAdet);
             this.grbSatis.Controls.Add(this.txstSatısFiyat);
             this.grbSatis.Controls.Add(this.txtSatisUrunAdi);
@@ -608,14 +618,15 @@ namespace FrmBeyazEsya
             this.btnFiyataGoreSatis.UseVisualStyleBackColor = true;
             this.btnFiyataGoreSatis.Click += new System.EventHandler(this.btnFiyataGoreSatis_Click);
             // 
-            // maskedTextBox1
+            // mskSatisTarihi
             // 
-            this.maskedTextBox1.Location = new System.Drawing.Point(932, 37);
-            this.maskedTextBox1.Mask = "00/00/0000 90:00";
-            this.maskedTextBox1.Name = "maskedTextBox1";
-            this.maskedTextBox1.Size = new System.Drawing.Size(139, 25);
-            this.maskedTextBox1.TabIndex = 58;
-            this.maskedTextBox1.ValidatingType = typeof(System.DateTime);
+            this.mskSatisTarihi.Location = new System.Drawing.Point(932, 37);
+            this.mskSatisTarihi.Mask = "00/00/0000 90:00";
+            this.mskSatisTarihi.Name = "mskSatisTarihi";
+            this.mskSatisTarihi.Size = new System.Drawing.Size(139, 25);
+            this.mskSatisTarihi.TabIndex = 58;
+            this.mskSatisTarihi.ValidatingType = typeof(System.DateTime);
+
             // 
             // txtSatisAdet
             // 
@@ -820,7 +831,7 @@ namespace FrmBeyazEsya
         private System.Windows.Forms.Label lblSatisAdet;
         private System.Windows.Forms.Label lblSatisFiyat;
         private System.Windows.Forms.Label lblSatisUrunAd;
-        private System.Windows.Forms.MaskedTextBox maskedTextBox1;
+        private System.Windows.Forms.MaskedTextBox mskSatisTarihi;
         private System.Windows.Forms.TextBox txtSatisAdet;
         private System.Windows.Forms.TextBox txstSatısFiyat;
         private System.Windows.Forms.TextBox txtSatisUrunAdi;
@@ -839,6 +850,7 @@ namespace FrmBeyazEsya
         private System.Windows.Forms.MaskedTextBox mskSatisMusteriTC;
         private System.Windows.Forms.MaskedTextBox mskListeleMusteriTC;
         private System.Windows.Forms.MaskedTextBox mskMusteriTCGuncelle;
+        private System.Windows.Forms.ComboBox cmbSehir;
     }
 }
 

@@ -31,6 +31,26 @@ namespace FrmBeyazEsya.DBManager
             _conn.BaglantiKapat();
             return musteriler;
         }
+        public List<Musteri> SehirGetir()
+        {
+            _conn.BaglantiAc();
+            SqlCommand command = new SqlCommand("SELECT * FROM Musteri", _conn.Conn);
+            SqlDataReader dr = command.ExecuteReader();
+            List<Musteri> musteriler = new List<Musteri>();
+            while (dr.Read())
+            {
+                Musteri musteri = new Musteri()
+                {
+                    MusteriID = Convert.ToInt32(dr["MusteriId"]),
+                    MusteriSehir = dr["MusteriSehir"].ToString(),
+
+                };
+                musteriler.Add(musteri);
+            }
+
+            _conn.BaglantiKapat();
+            return musteriler;
+        }
 
         public void MusteriEkle(Musteri musteri)
         {

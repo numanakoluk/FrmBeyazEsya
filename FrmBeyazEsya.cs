@@ -1,6 +1,7 @@
 ﻿using FrmBeyazEsya.DBManager;
 using FrmBeyazEsya.Model;
 using System;
+using System.Data;
 using System.Linq;
 using System.Windows.Forms;
 
@@ -28,7 +29,7 @@ namespace FrmBeyazEsya
         
         private void btnMusteriEkle_Click(object sender, EventArgs e)
         {
-            if (string.IsNullOrEmpty(txtMusteriAd.Text)  || string.IsNullOrEmpty(txtMusteriSoyad.Text)  || string.IsNullOrEmpty(txtMusteriSehir.Text) || string.IsNullOrEmpty(mskAraMusteriTC.Text))
+            if (string.IsNullOrEmpty(txtMusteriAd.Text)  || string.IsNullOrEmpty(txtMusteriSoyad.Text)  || string.IsNullOrEmpty(txtMusteriSehir.Text) || string.IsNullOrEmpty(mskListeleMusteriTC.Text))
             {
                 MessageBox.Show(Error.BoşAlanHata);
                 
@@ -36,14 +37,14 @@ namespace FrmBeyazEsya
             }
             else
             {
-                //MessageBox.Show(txtMusteriAd.Text);
+                
                 _musteriDB.MusteriEkle(new Model.Musteri
                 {
                     
                     MusteriAd = txtMusteriAd.Text,
                     MusteriSoyad = txtMusteriSoyad.Text,
                     MusteriSehir = txtMusteriSehir.Text,
-                    //MusteriTC = mskListeleMusteriTC.Text
+                    MusteriTC = mskListeleMusteriTC.Text
 
                 });
                 MessageBox.Show("Müsteri Eklendi");
@@ -103,8 +104,7 @@ namespace FrmBeyazEsya
         {
             Musteri musteri = new Musteri
             {
-                MusteriID = Convert.ToInt32(dgwMusteriGetir.CurrentRow.Cells[0].Value),
-                
+                MusteriID = Convert.ToInt32(dgwMusteriGetir.CurrentRow.Cells[0].Value),               
                 MusteriAd = txtMusteriAdGuncelle.Text,
                 MusteriSoyad = txtMusteriSoyadGuncelle.Text,
                 MusteriSehir = txtMusteriSehirGuncelle.Text,
@@ -118,6 +118,15 @@ namespace FrmBeyazEsya
 
         private void btnMusteriAra_Click(object sender, EventArgs e)
         {
+            if(string.IsNullOrEmpty(mskAraMusteriTC.Text))
+                {
+                MessageBox.Show(Error.BoşAlanHata);
+
+            }
+            else
+            {
+
+            
             Musteri musteri = _musteriDB.MusteriAra(mskAraMusteriTC.Text);
 
             if (musteri.MusteriID != -1)
@@ -128,6 +137,7 @@ namespace FrmBeyazEsya
             else
             {
                 MessageBox.Show("Müşteri Bulunamadı");
+            }
             }
         }
 
@@ -164,7 +174,7 @@ namespace FrmBeyazEsya
                         UrunAd = txtUrunAd.Text,
                         Stok = Convert.ToInt32(txtUrunStok.Text)
                     });
-                    MessageBox.Show("Urun Eklendi");
+                    MessageBox.Show("Ürün Eklendi." );
                     dgwUrunGetir.DataSource = _urunDB.TumUrunleriGetir();
                 }
             }
@@ -200,6 +210,15 @@ namespace FrmBeyazEsya
         }
         private void btnUrunAra_Click(object sender, EventArgs e)
         {
+            if (string.IsNullOrEmpty(mskAraMusteriTC.Text))
+            {
+                MessageBox.Show(Error.BoşAlanHata);
+
+            }
+            else
+            {
+
+            
             Urun urun = _urunDB.UrunAra(txtUrunAdiAra.Text);
 
             if (urun.UrunID != -1)
@@ -209,6 +228,7 @@ namespace FrmBeyazEsya
             else
             {
                 MessageBox.Show("Ürün Bulunamadı");
+            }
             }
         }
 
@@ -270,7 +290,8 @@ namespace FrmBeyazEsya
 
         private void FrmBeyazEsya_Load(object sender, EventArgs e)
         {
-            
+            //MusteriDB musteri = new MusteriDB();
+            //cmbSehir.Items.Add(musteri.SehirGetir());
 
             dgwUrunGetir.DataSource = _urunDB.TumUrunleriGetir();
             dgwMusteriGetir.DataSource = _musteriDB.MusteriGetir();
@@ -299,6 +320,6 @@ namespace FrmBeyazEsya
 
         }
 
-        
+     
     }
 }

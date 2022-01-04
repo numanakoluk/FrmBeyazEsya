@@ -29,9 +29,12 @@ namespace FrmBeyazEsya
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmSatisGetir));
             this.dgwSatisGetir = new System.Windows.Forms.DataGridView();
             this.lblSatisGetir = new System.Windows.Forms.Label();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.dgwSatisGetir)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // dgwSatisGetir
@@ -39,11 +42,11 @@ namespace FrmBeyazEsya
             this.dgwSatisGetir.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgwSatisGetir.BackgroundColor = System.Drawing.Color.PeachPuff;
             this.dgwSatisGetir.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgwSatisGetir.Location = new System.Drawing.Point(1, 207);
+            this.dgwSatisGetir.Location = new System.Drawing.Point(1, 184);
             this.dgwSatisGetir.Name = "dgwSatisGetir";
             this.dgwSatisGetir.RowHeadersWidth = 51;
             this.dgwSatisGetir.RowTemplate.Height = 24;
-            this.dgwSatisGetir.Size = new System.Drawing.Size(885, 243);
+            this.dgwSatisGetir.Size = new System.Drawing.Size(885, 266);
             this.dgwSatisGetir.TabIndex = 0;
             // 
             // lblSatisGetir
@@ -56,12 +59,23 @@ namespace FrmBeyazEsya
             this.lblSatisGetir.TabIndex = 2;
             this.lblSatisGetir.Text = "Satış Bilgisi";
             // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
+            this.pictureBox1.Location = new System.Drawing.Point(1, 12);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(86, 79);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox1.TabIndex = 47;
+            this.pictureBox1.TabStop = false;
+            // 
             // FrmSatisGetir
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.PeachPuff;
             this.ClientSize = new System.Drawing.Size(890, 450);
+            this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.lblSatisGetir);
             this.Controls.Add(this.dgwSatisGetir);
             this.Name = "FrmSatisGetir";
@@ -69,6 +83,7 @@ namespace FrmBeyazEsya
             this.Text = "SatisGetir";
             this.Load += new System.EventHandler(this.FrmSatisGetir_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgwSatisGetir)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -78,5 +93,6 @@ namespace FrmBeyazEsya
 
         private System.Windows.Forms.DataGridView dgwSatisGetir;
         private System.Windows.Forms.Label lblSatisGetir;
+        private System.Windows.Forms.PictureBox pictureBox1;
     }
 }

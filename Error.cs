@@ -10,7 +10,7 @@ namespace FrmBeyazEsya
     {
         
         
-            public const string BoşAlanHata = "Lütfen İlgili Alanları Doldurunuz.";
+            public const string BoşAlanHata = "Lütfen İlgili Alanları Doldurunuz.";          
         
     }
 }
